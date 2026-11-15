@@ -1,0 +1,101 @@
+{
+  "models": {
+    "bow": {
+      "type": "CountVectorizer",
+      "params": {
+        "ngram_range": [
+          1,
+          1
+        ],
+        "min_df": 1
+      },
+      "features": 20026,
+      "file": "models/bow.joblib",
+      "size_mb": 0.26
+    },
+    "tfidf": {
+      "type": "TfidfVectorizer",
+      "params": {
+        "ngram_range": [
+          1,
+          2
+        ],
+        "min_df": 3
+      },
+      "features": 22910,
+      "file": "models/tfidf.joblib",
+      "size_mb": 0.51
+    },
+    "cbow": {
+      "type": "Word2Vec",
+      "sg": 0,
+      "params": {
+        "vector_size": 100,
+        "window": 5,
+        "min_count": 5,
+        "epochs": 30,
+        "negative": 5,
+        "workers": 1,
+        "seed": 42,
+        "hashfxn": "stable_hash"
+      },
+      "vocabulary": 5205,
+      "dimensions": 100,
+      "file": "models/word2vec_cbow.kv",
+      "size_mb": 2.23
+    },
+    "skipgram": {
+      "type": "Word2Vec",
+      "sg": 1,
+      "params": {
+        "vector_size": 100,
+        "window": 5,
+        "min_count": 5,
+        "epochs": 30,
+        "negative": 5,
+        "workers": 1,
+        "seed": 42,
+        "hashfxn": "stable_hash"
+      },
+      "vocabulary": 5205,
+      "dimensions": 100,
+      "file": "models/word2vec_skipgram.kv",
+      "size_mb": 2.23
+    },
+    "fasttext": {
+      "type": "FastText",
+      "sg": 1,
+      "params": {
+        "vector_size": 100,
+        "window": 5,
+        "min_count": 5,
+        "epochs": 30,
+        "negative": 5,
+        "workers": 1,
+        "seed": 42,
+        "hashfxn": "stable_hash",
+        "min_n": 3,
+        "max_n": 6,
+        "bucket": 50000
+      },
+      "vocabulary": 5205,
+      "dimensions": 100,
+      "file": "models/fasttext.kv",
+      "size_mb": 22.23
+    }
+  },
+  "fit_split": "train",
+  "corpus": {
+    "source": "data/processed/goemotions_clean.csv (column text_clean)",
+    "documents": 43410,
+    "tokens": 380557,
+    "sha1_of_texts": "b99009246de6da9904c31ac80293a13b65bff7c1"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "gensim": "4.4.0",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  }
+}
