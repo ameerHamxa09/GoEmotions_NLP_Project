@@ -1,0 +1,17 @@
+{
+  "rows": 54263,
+  "rows_per_split": {
+    "train": 43410,
+    "test": 5427,
+    "validation": 5426
+  },
+  "vocab_raw_cased": 65523,
+  "vocab_raw_lowercased": 56964,
+  "vocab_clean": 22405,
+  "vocab_reduction_pct_vs_raw_cased": 65.8,
+  "tokens_raw": 695858,
+  "tokens_clean": 475269,
+  "mean_words_raw": 12.82,
+  "mean_words_clean": 8.76,
+  "empty_after_cleaning": 0
+}
