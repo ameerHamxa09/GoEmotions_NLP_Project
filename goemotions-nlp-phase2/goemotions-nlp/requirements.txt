@@ -1,0 +1,11 @@
+pandas>=2.1
+numpy>=1.26
+matplotlib>=3.8
+nltk>=3.9
+spacy>=3.7,<4
+notebook>=7
+ipykernel>=6.29
+scikit-learn>=1.4
+scipy>=1.11
+gensim>=4.3.3
+joblib>=1.3
